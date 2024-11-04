@@ -72,8 +72,8 @@ public class Menu_script : MonoBehaviour
         sliderPanel.SetActive(true);
         buttons.SetActive(false);
         solveButton.SetActive(false);
-        //autoButton.SetActive(false);
-        //clearButton.SetActive(false);
+        autoButton.SetActive(false);
+        clearButton.SetActive(false);
         recSlider = recordSlider.GetComponent<Slider>();
         recSlider.maxValue = fourBlockMovement.RecordList.Count - 1;
         recSlider.onValueChanged.AddListener(delegate { RecordValueChangeCheck(); });
@@ -277,10 +277,10 @@ public class Menu_script : MonoBehaviour
     public void ClearBtnClick()
     {
         solutionPanel.SetActive(false);
-        //ActionListText.text = "";
-        //scrollView.SetActive(false);
-        //autoButton.SetActive(false);
-        //clearButton.SetActive(false);
+        ActionListText.text = "";
+        scrollView.SetActive(false);
+        autoButton.SetActive(false);
+        clearButton.SetActive(false);
     }
     public void RandomRecord()
     {

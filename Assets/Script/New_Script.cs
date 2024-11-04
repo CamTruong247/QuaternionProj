@@ -357,7 +357,7 @@ public class New_Script : MonoBehaviour
         CreateRequest();
         parent.SetActive(true);
         // Debug.Log(parent.GetComponent<Menu_script>());
-        //parent.GetComponent<Menu_script>().Resume();
+        parent.GetComponent<Menu_script>().Resume();
         pnl4x4.SetActive(false);
         nudR4x1.SetActive(false);
         pnl1x6.SetActive(false);

@@ -103,6 +103,7 @@ public class Movement : MonoBehaviour
         List<Vector3> v3List = new List<Vector3>() { new Vector3(0, 0.5f, 0), new Vector3(0, 0, -0.5f),
                                                      new Vector3(-0.5f, 0, 0), new Vector3(0, -0.5f, 0),
                                                      new Vector3(0, 0, 0.5f), new Vector3(0.5f, 0, 0) };
+        Debug.Log(faceCode);
         Vector3 v3Direction = v3List[faceCode];
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(v3Direction), out hit, 0.48f,1 << FaceLayer))

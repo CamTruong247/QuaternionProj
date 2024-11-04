@@ -72,8 +72,7 @@ public class FourBlockMovement : MonoBehaviour
     public int BlockFaceCenter(int bl, int directionCode)
     {
         Movement movement = blocks[bl].GetComponent<Movement>();
-        Collider[] hitColliders = Physics.OverlapSphere(blocks[bl].transform.position + 0.5f *
-       DirCodeToVector(directionCode),
+        Collider[] hitColliders = Physics.OverlapSphere(blocks[bl].transform.position + 0.5f *DirCodeToVector(directionCode),
         0.2f);
         // Debug.Log("hitColliders.Count="+ hitColliders.Count());
         foreach (Collider hitCollider in hitColliders)
@@ -81,7 +80,8 @@ public class FourBlockMovement : MonoBehaviour
             int code = -1;
             if (int.TryParse(hitCollider.name, out code))
             {
-                // Debug.Log("Trả vè " + code);
+                 //Debug.Log("Trả vè " + code);
+                return code;
             }
         }
         // Debug.Log("Báo sai");
@@ -99,10 +99,10 @@ public class FourBlockMovement : MonoBehaviour
         for (int f = 0; f < 6; f++)
         {
             Movement movement = blocks[bl].GetComponent<Movement>();
-            // Debug.Log("f=" + f+ ", movement="+ movement);
-            // Debug.Log("Vào CodeToRealFace(" + bl + "," + f + ")");
+            //Debug.Log("f=" + f+ ", movement="+ movement);
+            //Debug.Log("Vào CodeToRealFace(" + bl + "," + f + ")");
             GameObject realFace = movement.CodeToRealFace(BlockFaceCenter(bl, f));
-            // Debug.Log("realFace="+ realFace);
+            //Debug.Log("realFace="+ realFace);
             // Material[] materials = realFace.GetComponent<MeshRenderer>().materials;
             Material material = realFace.GetComponent<MeshRenderer>().material;
             // Debug.Log("material.name="+MaterialToName(material));
